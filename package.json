@@ -1,0 +1,22 @@
+{
+  "name": "d3-graph-utils",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magl-fr/d3-graph-utils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magl-fr/d3-graph-utils/issues"
+  },
+  "homepage": "https://github.com/magl-fr/d3-graph-utils#readme"
+}
