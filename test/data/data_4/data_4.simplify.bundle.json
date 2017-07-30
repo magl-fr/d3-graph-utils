@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "B5",
+      "type": "bundle",
+      "bundlees": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "S1",
+      "type": "simplification"
+    },
+    {
+      "id": "S2",
+      "type": "simplification"
+    },
+    {
+      "id": "C"
+    },
+    {
+      "id": "D"
+    },
+    {
+      "id": "S3",
+      "type": "simplification"
+    },
+    {
+      "id": "E"
+    },
+    {
+      "id": "S4",
+      "type": "simplification"
+    },
+    {
+      "id": "F"
+    },
+    {
+      "id": "B6",
+      "type": "bundle",
+      "bundlees": [
+        "R1",
+        "R4",
+        "R8"
+      ]
+    },
+    {
+      "id": "R2"
+    },
+    {
+      "id": "R3"
+    },
+    {
+      "id": "R5"
+    },
+    {
+      "id": "R6"
+    },
+    {
+      "id": "R7"
+    }
+  ],
+  "links": [
+    {
+      "source": "B5",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "S1",
+      "target": "R2"
+    },
+    {
+      "source": "S1",
+      "target": "S2",
+      "simplification": true
+    },
+    {
+      "source": "S2",
+      "target": "R3"
+    },
+    {
+      "source": "S2",
+      "target": "D"
+    },
+    {
+      "source": "S2",
+      "target": "B6"
+    },
+    {
+      "source": "C",
+      "target": "R5"
+    },
+    {
+      "source": "C",
+      "target": "S2",
+      "simplification": true
+    },
+    {
+      "source": "D",
+      "target": "S3",
+      "simplification": true
+    },
+    {
+      "source": "S3",
+      "target": "R6"
+    },
+    {
+      "source": "S3",
+      "target": "S4",
+      "simplification": true
+    },
+    {
+      "source": "E",
+      "target": "S3",
+      "simplification": true
+    },
+    {
+      "source": "S4",
+      "target": "C"
+    },
+    {
+      "source": "S4",
+      "target": "B5"
+    },
+    {
+      "source": "F",
+      "target": "R5"
+    },
+    {
+      "source": "F",
+      "target": "S4",
+      "simplification": true
+    },
+    {
+      "source": "B6",
+      "target": "R7"
+    }
+  ]
+}

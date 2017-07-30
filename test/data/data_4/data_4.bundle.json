@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "id": "B1",
+      "type": "bundle",
+      "bundlees": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "C"
+    },
+    {
+      "id": "D"
+    },
+    {
+      "id": "E"
+    },
+    {
+      "id": "F"
+    },
+    {
+      "id": "B2",
+      "type": "bundle",
+      "bundlees": [
+        "R1",
+        "R4",
+        "R8"
+      ]
+    },
+    {
+      "id": "R2"
+    },
+    {
+      "id": "R3"
+    },
+    {
+      "id": "R5"
+    },
+    {
+      "id": "R6"
+    },
+    {
+      "id": "R7"
+    }
+  ],
+  "links": [
+    {
+      "source": "B1",
+      "target": "R2"
+    },
+    {
+      "source": "B1",
+      "target": "R3"
+    },
+    {
+      "source": "B1",
+      "target": "D"
+    },
+    {
+      "source": "B1",
+      "target": "B2"
+    },
+    {
+      "source": "C",
+      "target": "R3"
+    },
+    {
+      "source": "C",
+      "target": "R5"
+    },
+    {
+      "source": "C",
+      "target": "D"
+    },
+    {
+      "source": "C",
+      "target": "B2"
+    },
+    {
+      "source": "D",
+      "target": "C"
+    },
+    {
+      "source": "D",
+      "target": "R6"
+    },
+    {
+      "source": "D",
+      "target": "B1"
+    },
+    {
+      "source": "E",
+      "target": "C"
+    },
+    {
+      "source": "E",
+      "target": "R6"
+    },
+    {
+      "source": "E",
+      "target": "B1"
+    },
+    {
+      "source": "F",
+      "target": "C"
+    },
+    {
+      "source": "F",
+      "target": "R5"
+    },
+    {
+      "source": "F",
+      "target": "B1"
+    },
+    {
+      "source": "B2",
+      "target": "R7"
+    }
+  ]
+}

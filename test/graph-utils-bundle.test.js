@@ -8,3 +8,12 @@ test('bundle: data set diabolo', () => {
     let bundledData = new GraphUtils(data).bundle().result();
     expect(bundledData).toEqual(data_result);
 });
+
+test('bundle: data set 4', () => {
+    let data = GraphTestUtils.readFile('./test/data/data_4/data_4.json');
+    let data_result = GraphTestUtils.readFile('./test/data/data_4/data_4.bundle.json');
+
+    let simplifyData = new GraphUtils(data).bundle().result();
+
+    expect(simplifyData).toEqual(data_result);
+});

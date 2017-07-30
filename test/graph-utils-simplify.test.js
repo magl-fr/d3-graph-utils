@@ -9,3 +9,12 @@ test('simplify: data set diabolo', () => {
 
     expect(simplifyData).toEqual(data_result);
 });
+
+test('simplify: data set 4', () => {
+    let data = GraphTestUtils.readFile('./test/data/data_4/data_4.json');
+    let data_result = GraphTestUtils.readFile('./test/data/data_4/data_4.simplify.json');
+
+    let simplifyData = new GraphUtils(data).simplify().result();
+
+    expect(simplifyData).toEqual(data_result);
+});

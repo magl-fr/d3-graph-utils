@@ -106,7 +106,7 @@
     svg.call(zoom);
     svg.call(tip);
 
-    d3.json("data_diabolo.simplify.bundle.json", function(error, graph) {
+    d3.json("data-simplify.json", function(error, graph) {
         if (error) throw error;
 
         var link = view.append("g")

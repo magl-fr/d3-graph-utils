@@ -65,18 +65,12 @@ class GraphUtils {
             if (!sourceNode.links) {
                 sourceNode.links = {};
             }
-
-            if (!sourceNode.links[targetId]) {
-                sourceNode.links[targetId] = true;
-            }
+            sourceNode.links[targetId] = true;
 
             if (!targetNode.parents) {
                 targetNode.parents = {};
             }
-
-            if (!targetNode.parents[sourceId]) {
-                targetNode.parents[sourceId] = true;
-            }
+            targetNode.parents[sourceId] = true;
         }
 
         /*for (let i = 0; i < this.nodes.length; i++) {
@@ -105,21 +99,19 @@ class GraphUtils {
             let links = node.links;
 
             for (let link in links) {
-                if (links[link]) {
-                    let targetNode = this.nodesById[link];
-                    let simplificationNode = (targetNode.type == "simplification");
+                let targetNode = this.nodesById[link];
+                let simplificationNode = (targetNode.type == "simplification");
 
-                    let resultLink = {
-                        source: node.id,
-                        target: link
-                    };
+                let resultLink = {
+                    source: node.id,
+                    target: link
+                };
 
-                    if (simplificationNode) {
-                        resultLink.simplification = true;
-                    }
-
-                    resultLinks.push(resultLink);
+                if (simplificationNode) {
+                    resultLink.simplification = true;
                 }
+
+                resultLinks.push(resultLink);
             }
 
             delete node.links;
@@ -140,10 +132,6 @@ class GraphUtils {
 
             for (let j = 0; j < computedNodes.length; j++) {
                 let cNode = computedNodes[j];
-
-                if (cNode == node) {
-                    continue;
-                }
 
                 let cNodeLinks = cNode.links;
 
@@ -166,11 +154,9 @@ class GraphUtils {
 
                         // remove the node its parents links
                         for (let sharedLink in sharedLinks) {
-                            if (sharedLinks[sharedLink]) {
-                                if (node.links[sharedLink]) {
-                                    let linkNode = this.nodesById[sharedLink];
-                                    delete linkNode.parents[node.id];
-                                }
+                            if (node.links[sharedLink]) {
+                                let linkNode = this.nodesById[sharedLink];
+                                delete linkNode.parents[node.id];
                             }
                         }
 
@@ -194,32 +180,11 @@ class GraphUtils {
 
                         newSimplificationNode.links = sharedLinks;
 
-                        // remove the node its parents links
-                        /*for (let link in node.links) {
-                            if (node.links[link]) {
-                                let linkNode = this.nodesById[link];
-                                linkNode.parents[node.id] = false;
-                            }
-                        }*/
-
-                        // remove the node its parents links
-                        /*for (let link in cNode.links) {
-                            if (cNode.links[link]) {
-                                let linkNode = this.nodesById[link];
-                                linkNode.parents[cNode.id] = false;
-                            }
-                        }*/
-
                         for (let simplificationLink in newSimplificationNode.links) {
-                            if (newSimplificationNode.links[simplificationLink]) {
-                                let simplificationLinkNode = this.nodesById[simplificationLink];
-                                if (! simplificationLinkNode.parents) {
-                                    simplificationLinkNode.parents = {};
-                                }
-                                simplificationLinkNode.parents[newSimplificationNode.id] = true;
-                                delete simplificationLinkNode.parents[node.id];
-                                delete simplificationLinkNode.parents[cNode.id];
-                            }
+                            let simplificationLinkNode = this.nodesById[simplificationLink];
+                            simplificationLinkNode.parents[newSimplificationNode.id] = true;
+                            delete simplificationLinkNode.parents[node.id];
+                            delete simplificationLinkNode.parents[cNode.id];
                         }
 
                         this.removeLinksInLinks(node.links, sharedLinks);
@@ -265,10 +230,6 @@ class GraphUtils {
                 let node2 = potentialSiblingsNodes[j];
                 let links2 = node2.links;
                 let parents2 = node2.parents;
-
-                if (node1 == node2) {
-                    continue;
-                }
 
                 if (this.isEquivalent(links1, links2) && this.isEquivalent(parents1, parents2)) {
                     bundlees.push(node2)
@@ -319,25 +280,21 @@ class GraphUtils {
         let result = [];
         
         for (let link in node.links) {
-            if (node.links[link]) {
-                let linkNode = this.nodesById[link];
-                for (let parent in linkNode.parents) {
-                    let parentNode = this.nodesById[parent];
-                    if (linkNode.parents[parent] && parentNode != node && result.indexOf(parentNode) < 0 && !parentNode.bundled) {
-                        result.push(parentNode);
-                    }
+            let linkNode = this.nodesById[link];
+            for (let parent in linkNode.parents) {
+                let parentNode = this.nodesById[parent];
+                if (linkNode.parents[parent] && parentNode != node && result.indexOf(parentNode) < 0 && !parentNode.bundled) {
+                    result.push(parentNode);
                 }
             }
         }
 
         for (let parent in node.parents) {
-            if (node.parents[parent]) {
-                let parentNode = this.nodesById[parent];
-                for (let link in parentNode.links) {
-                    let linkNode = this.nodesById[link];
-                    if (parentNode.links[link] && linkNode != node && result.indexOf(linkNode) < 0 && !linkNode.bundled) {
-                        result.push(linkNode);
-                    }
+            let parentNode = this.nodesById[parent];
+            for (let link in parentNode.links) {
+                let linkNode = this.nodesById[link];
+                if (parentNode.links[link] && linkNode != node && result.indexOf(linkNode) < 0 && !linkNode.bundled) {
+                    result.push(linkNode);
                 }
             }
         }
@@ -382,7 +339,7 @@ class GraphUtils {
 
     removeLinksInLinks(links1, links2) {
         for (let link2 in links2) {
-            if (links2[link2] && links1[link2]) {
+            if (links1[link2]) {
                 delete links1[link2];
             }
         }
@@ -391,7 +348,7 @@ class GraphUtils {
     getSharedLinks(links1, link2) {
         let sameLinks = {};
         for (let link1 in links1) {
-            if (links1[link1] && link2[link1]) {
+            if (link2[link1]) {
                 sameLinks[link1] = true;
             }
         }

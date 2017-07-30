@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "id": "A"
+    },
+    {
+      "id": "S1",
+      "type": "simplification"
+    },
+    {
+      "id": "B"
+    },
+    {
+      "id": "S2",
+      "type": "simplification"
+    },
+    {
+      "id": "C"
+    },
+    {
+      "id": "D"
+    },
+    {
+      "id": "S3",
+      "type": "simplification"
+    },
+    {
+      "id": "E"
+    },
+    {
+      "id": "S4",
+      "type": "simplification"
+    },
+    {
+      "id": "F"
+    },
+    {
+      "id": "R1"
+    },
+    {
+      "id": "R2"
+    },
+    {
+      "id": "R3"
+    },
+    {
+      "id": "R4"
+    },
+    {
+      "id": "R5"
+    },
+    {
+      "id": "R6"
+    },
+    {
+      "id": "R7"
+    },
+    {
+      "id": "R8"
+    }
+  ],
+  "links": [
+    {
+      "source": "A",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "S1",
+      "target": "R2"
+    },
+    {
+      "source": "S1",
+      "target": "S2",
+      "simplification": true
+    },
+    {
+      "source": "B",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "S2",
+      "target": "R1"
+    },
+    {
+      "source": "S2",
+      "target": "R3"
+    },
+    {
+      "source": "S2",
+      "target": "R4"
+    },
+    {
+      "source": "S2",
+      "target": "R8"
+    },
+    {
+      "source": "S2",
+      "target": "D"
+    },
+    {
+      "source": "C",
+      "target": "R5"
+    },
+    {
+      "source": "C",
+      "target": "S2",
+      "simplification": true
+    },
+    {
+      "source": "D",
+      "target": "S3",
+      "simplification": true
+    },
+    {
+      "source": "S3",
+      "target": "R6"
+    },
+    {
+      "source": "S3",
+      "target": "S4",
+      "simplification": true
+    },
+    {
+      "source": "E",
+      "target": "S3",
+      "simplification": true
+    },
+    {
+      "source": "S4",
+      "target": "A"
+    },
+    {
+      "source": "S4",
+      "target": "B"
+    },
+    {
+      "source": "S4",
+      "target": "C"
+    },
+    {
+      "source": "F",
+      "target": "R5"
+    },
+    {
+      "source": "F",
+      "target": "S4",
+      "simplification": true
+    },
+    {
+      "source": "R1",
+      "target": "R7"
+    },
+    {
+      "source": "R4",
+      "target": "R7"
+    },
+    {
+      "source": "R8",
+      "target": "R7"
+    }
+  ]
+}
