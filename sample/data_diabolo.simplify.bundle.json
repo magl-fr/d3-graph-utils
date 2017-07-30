@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "B2",
+      "type": "bundle",
+      "bundlees": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": "S1",
+      "type": "simplification"
+    },
+    {
+      "id": "B3",
+      "type": "bundle",
+      "bundlees": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "B2",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "S1",
+      "target": "B3"
+    }
+  ]
+}

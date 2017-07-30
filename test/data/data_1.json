@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id": "A"},
+    {"id": "B"},
+    {"id": "R1"},
+    {"id": "R2"},
+    {"id": "R3"},
+    {"id": "R4"}
+  ],
+  "links": [
+    {"source": "A", "target": "R1"},
+    {"source": "A", "target": "R2"},
+    {"source": "A", "target": "R3"},
+    {"source": "A", "target": "R4"},
+
+    {"source": "B", "target": "R1"},
+    {"source": "B", "target": "R2"},
+    {"source": "B", "target": "R3"},
+    {"source": "B", "target": "R4"}
+  ]
+}

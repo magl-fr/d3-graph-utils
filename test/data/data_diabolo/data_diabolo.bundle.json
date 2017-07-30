@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "id": "B1",
+      "type": "bundle",
+      "bundlees": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": "B2",
+      "type": "bundle",
+      "bundlees": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "B1",
+      "target": "B2"
+    }
+  ]
+}

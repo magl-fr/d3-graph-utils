@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "A"
+    },
+    {
+      "id": "S1",
+      "type": "simplification"
+    },
+    {
+      "id": "B"
+    },
+    {
+      "id": "C"
+    },
+    {
+      "id": "D"
+    },
+    {
+      "id": "R1"
+    },
+    {
+      "id": "R2"
+    },
+    {
+      "id": "R3"
+    },
+    {
+      "id": "R4"
+    }
+  ],
+  "links": [
+    {
+      "source": "A",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "S1",
+      "target": "R1"
+    },
+    {
+      "source": "S1",
+      "target": "R2"
+    },
+    {
+      "source": "S1",
+      "target": "R3"
+    },
+    {
+      "source": "S1",
+      "target": "R4"
+    },
+    {
+      "source": "B",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "C",
+      "target": "S1",
+      "simplification": true
+    },
+    {
+      "source": "D",
+      "target": "S1",
+      "simplification": true
+    }
+  ]
+}

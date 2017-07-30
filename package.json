@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/magl-fr/d3-graph-utils/issues"
   },
-  "homepage": "https://github.com/magl-fr/d3-graph-utils#readme"
+  "homepage": "https://github.com/magl-fr/d3-graph-utils#readme",
+  "devDependencies": {
+    "d3-tip": "^0.7.1",
+    "jest": "^20.0.4"
+  }
 }

@@ -30,14 +30,16 @@ class GraphUtils {
         this.normalizeNodesLinks();
     }
 
-    simplify(content) {
+    simplify() {
         let computedNodes = this.computeSimplificationNodes();
         this.nodes = computedNodes;
+        return this;
     }
 
     bundle() {
         let computedNodes = this.computeBundleNodes();
         this.nodes = computedNodes;
+        return this;
     }
 
     result() {
@@ -316,15 +318,17 @@ class GraphUtils {
 
         let result = [];
         
-        /*for (let link in node.links) {
+        for (let link in node.links) {
             if (node.links[link]) {
-                for (let parent in link.parents) {
-                    if (link.parents[parent] && parent != node && result.indexOf(parent) < 0 && !parent.bundled) {
-                        result.push(parent);
+                let linkNode = this.nodesById[link];
+                for (let parent in linkNode.parents) {
+                    let parentNode = this.nodesById[parent];
+                    if (linkNode.parents[parent] && parentNode != node && result.indexOf(parentNode) < 0 && !parentNode.bundled) {
+                        result.push(parentNode);
                     }
                 }
             }
-        }*/
+        }
 
         for (let parent in node.parents) {
             if (node.parents[parent]) {
